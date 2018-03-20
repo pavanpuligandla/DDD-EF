@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    
+
+</head>
+<body>
+    <div data-ui-view class="row">
+        <form data-ng-submit="login()"
+              tekautofillupdate
+              novalidate="novalidate"
+              class="large-9 large-centered medium-9 medium-centered small-12 small-centered columns panel small-only-panel">
+            <h1 class="text-center">Sign in to SPA POC</h1>
+            <p class="text-center">Please enter your email and password</p>
+            <div class="row">
+                <div class="small-12 columns">
+                    <input type="text" name="email" placeholder="Email *" tabindex="1" data-tekinputicon="" ng-model="currentUser.email" class="icon icon_name" />
+                </div>
+                <div class="small-12 columns">
+                    <input type="password" name="password" placeholder="Password *" tabindex="2" data-tekinputicon="" ng-model="currentUser.password" class="icon icon_password" />
+                </div>
+            </div>
+            <div class="row">
+                <label class="small-6 columns checkbox-label-spacing">
+                    <tek-check-box>
+                        <input type="checkbox" class="tek_check" tabindex="3" value="{{currentUser.rememberMe}}" ng-focus="hasFocus()" ng-model="currentUser.rememberMe" />
+                    </tek-check-box>
+                    Remember Me
+                </label>
+                <a class="small-6 columns text-right help-text underline" data-ui-sref="forgotPassword">Forgot Password?</a>
+                <div class="small-12 columns">
+                    <input tabindex="4" ng-class="{action: currentUser.email !=null !=undefined && currentUser.password !=null !=undefined}" class="button expand active radius right" type="submit" data-ng-click placeholder="medium-4.columns" value="Sign In" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns socialbtns">
+                    <input class="button expand facebook action radius left icon icon_facebookbtn" type="button" data-tekinputicon="" data-ng-click="authenticate('facebook')" value="Sign in with Facebook" />
+                </div>
+                <div class="small-12 columns socialbtns">
+                    <input class="button expand google action radius right icon icon_googlebtn" type="button" data-tekinputicon="" data-ng-click="authenticate('google')" value="Sign in with Google" />
+                </div>
+                <div class="help-text text-center small-12 columns">
+                    <p class="text-nav">HAVEN'T CREATED AN ACCOUNT YET? <a class="underline" href="@Url.Action(" Register")">CLICK HERE TO REGISTER.</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

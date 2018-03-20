@@ -1,0 +1,45 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="$(SolutionDir)\Domain\bin\Debug\Domain.Dll" #> 
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+
+namespace Services
+{
+    using DataAccess.Abstraction;
+    using Domain;
+    using Services;
+
+<#
+    Assembly assembly = Assembly.LoadFrom(@"D:\ProjectAllocation\Domain\bin\Debug\Domain.dll");
+    Type[] types = assembly.GetTypes();
+	foreach (Type type in types)      
+	{
+#>
+	public partial interface I<#= type.Name #>Service : IEntityService<<#= type.Name #>> 
+	{
+	}
+
+	public partial class <#= type.Name #>Service : EntityService<<#= type.Name #>>, I<#= type.Name #>Service
+	{
+	    private readonly IUnitOfWork _unitOfWork;
+        private readonly IRepository<<#= type.Name #>> _repository;
+
+		public <#= type.Name #>Service(IUnitOfWork unitOfWork, IRepository<<#= type.Name #>> repository)
+            : base(unitOfWork, repository)
+        {
+		   _unitOfWork = unitOfWork;
+		   _repository = repository;
+        }
+	}  
+<#
+	}
+#>
+}

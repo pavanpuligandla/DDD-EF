@@ -1,0 +1,6 @@
+projectKey=PA
+serverUrl=http://172.21.0.112:8090
+serverVersion=6.7.1.35068
+dashboardUrl=http://172.21.0.112:8090/dashboard/index/PA
+ceTaskId=AWFKyZwIKTSwp-dJymZB
+ceTaskUrl=http://172.21.0.112:8090/api/ce/task?id=AWFKyZwIKTSwp-dJymZB

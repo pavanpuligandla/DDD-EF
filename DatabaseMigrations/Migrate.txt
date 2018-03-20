@@ -1,0 +1,11 @@
+﻿DEPLOY
+
+migrate -a \ProjectAllocation\DatabaseMigrations\bin\Debug\DatabaseMigrations.dll -db SqlServer2014  -conn "server=EXCELRAWS800\SQL2016;Initial Catalog=ProjectAllocation;User ID = sa;Password = sa@123;" -task=migrate 
+
+ROLLBACK ONE
+
+migrate -a \ProjectAllocation\DatabaseMigrations\bin\debug\DatabaseMigrations.dll -db SqlServer2008  -conn "server=EXCELRAWS800\SQL2016;Initial Catalog=ProjectAllocation;User ID = sa;Password = sa@123;" -task=rollback
+
+LIST MIGRATIONS>
+
+migrate -a \ProjectAllocation\DatabaseMigrations\bin\debug\DatabaseMigrations.dll -db SqlServer2008  -conn "server=EXCELRAWS800\SQL2016;Initial Catalog=ProjectAllocation;User ID = sa;Password = sa@123;" -task=listmigrations

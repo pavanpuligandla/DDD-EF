@@ -1,0 +1,42 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="$(SolutionDir)\Domain\bin\Debug\Domain.Dll" #> 
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+
+namespace Send.Data.Repositories
+{
+    using DataAccess;
+	using DataAccess.Interfaces;
+	using DataAccess.Implementation;
+	using Services.Entity;
+    using Domain;
+
+<#
+    Assembly assembly = Assembly.LoadFrom(@"D:\ProjectAllocation\Domain\bin\Debug\Domain.dll");
+    Type[] types = assembly.GetTypes();
+	foreach (Type type in types)      
+	{
+#>
+	public partial interface I<#= type.Name #>Service : IEntityService<<#= type.Name #>> 
+	{
+	}
+
+	public partial class <#= type.Name #>Service : EntityService<<#= type.Name #>, I<#= type.Name #>Repository>, I<#= type.Name #>Service
+	{
+		public <#= type.Name #>Service(I<#= type.Name #>Repository repository)
+			: base(repository)
+        {
+        }
+	}  
+<#
+	}
+#>
+}

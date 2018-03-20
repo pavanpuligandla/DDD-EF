@@ -1,0 +1,11 @@
+{
+  "ServerUri": "http://172.21.0.112:8090/",
+  "Organization": null,
+  "ProjectKey": "PA",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AWEnugRh-BM4I6OCiLFq",
+      "ProfileTimestamp": "2018-01-24T16:02:37+05:30"
+    }
+  }
+}

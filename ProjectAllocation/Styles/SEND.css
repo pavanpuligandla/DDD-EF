@@ -1,0 +1,47 @@
+﻿body {
+    background: #fff;
+}
+
+.form_bg {
+    background-color: #eee;
+    color: #666;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    border: 1px solid #fff;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    height: 320px;
+}
+
+.align-center {
+    text-align: center;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #f5f5f5;
+}
+.navbar-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .navbar-primary .navbar-nav > li > a, .navbar-primary > .container .navbar-brand {
+        color: #fff;
+    }
+    .navbar-primary .navbar-toggle .icon-bar
+    {
+        background-color:#fff;
+    }
+
+    .no-padding-left{
+        padding-left:0;
+    }

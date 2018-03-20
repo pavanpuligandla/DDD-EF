@@ -1,0 +1,42 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="System" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="$(SolutionDir)\Domain\bin\Debug\Domain.Dll" #> 
+<#@ import namespace="System" #>
+<#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+
+namespace DataAccess.Repositories
+{
+    using DataAccess;
+	using DataAccess.Abstraction;
+	using DataAccess.Implementation;
+	using System.Data.Entity;
+    using Domain;
+
+<#
+    Assembly assembly = Assembly.LoadFrom(@"D:\ProjectAllocation\Domain\bin\Debug\Domain.dll");
+    Type[] types = assembly.GetTypes();
+	foreach (Type type in types)      
+	{
+#>
+	public partial interface I<#= type.Name #>Repository : IRepository<<#= type.Name #>> 
+	{
+	}
+
+	public partial class <#= type.Name #>Repository : Repository<<#= type.Name #>>, I<#= type.Name #>Repository
+	{
+		public <#= type.Name #>Repository(DbContext context)
+            : base(context)
+        {
+        }
+	}  
+<#
+	}
+#>
+}
