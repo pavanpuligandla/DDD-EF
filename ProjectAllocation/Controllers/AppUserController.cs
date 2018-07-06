@@ -34,6 +34,7 @@ namespace ProjectAllocation.Controllers
                 throw new HttpResponseException(HttpStatusCode.Unauthorized);
             }
             var tokenString = Helper.GetToken(currentUser);
+            //TODO:
             //_appUserService.RecordLastLoginDateTime(currentUser.Id);
 
             return new HttpResponseMessage { Content = new StringContent(tokenString) };
