@@ -11,8 +11,6 @@ namespace ProjectAllocation.Core
     {
         public override void Log(ExceptionLoggerContext context)
         {
-            //Obselete method LogException()
-            //LogManager.GetCurrentClassLogger().LogException(LogLevel.Fatal, "Exception Logger caught an exception!", context.Exception);
             LogManager.GetCurrentClassLogger().Log(LogLevel.Fatal, context.Exception);
             base.Log(context);
         }

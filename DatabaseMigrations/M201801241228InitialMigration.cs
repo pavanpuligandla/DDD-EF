@@ -13,7 +13,7 @@ namespace DatabaseMigrations
         public override void Up()
         {
             //lookup data
-            Execute.Script(@"\ProjectAllocation\DatabaseMigrations\Scripts\LookupData.sql");
+            Execute.Script(@"\MyProjects\DDD-EF\DatabaseMigrations\Scripts\LookupData.sql");
         }
 
         public override void Down()

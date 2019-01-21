@@ -11,7 +11,7 @@ namespace Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IRepository<T> _repository;
 
-        public EntityService(IUnitOfWork unitOfWork, IRepository<T> repository)
+        protected EntityService(IUnitOfWork unitOfWork, IRepository<T> repository)
         {
             _unitOfWork = unitOfWork;
             _repository = repository;
@@ -31,7 +31,7 @@ namespace Services
             catch(Exception ex)
             {
                 _unitOfWork.Dispose();
-                throw ex;
+                throw;
             }
         }
 

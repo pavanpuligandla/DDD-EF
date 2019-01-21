@@ -31,6 +31,5 @@ namespace ProjectAllocation.Controllers
             _service.Create(projectType);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
-
     }
 }

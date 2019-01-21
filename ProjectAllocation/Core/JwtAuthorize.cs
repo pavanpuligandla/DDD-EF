@@ -19,10 +19,9 @@ namespace ProjectAllocation.API.Core
             var principal = Thread.CurrentPrincipal;
             var user = principal as AppUser;
 
-            if (user == null || user.Identity.IsAuthenticated == false)
+            if (user == null || !user.Identity.IsAuthenticated)
             {
                 HttpContext.Current.Response.AddHeader("AuthenticationStatus", "NotAuthenticated");
-
                 actionContext.Response = actionContext.Request.CreateResponse(HttpStatusCode.Forbidden);
             }
 

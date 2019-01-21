@@ -45,13 +45,10 @@ namespace DataAccess.Implementation
         /// <param name="disposing">The dispose indicator.</param>
         private void Dispose(bool disposing)
         {
-            if (disposing)
+            if (disposing && _dbContext !=null)
             {
-                if (_dbContext != null)
-                {
-                    _dbContext.Dispose();
-                    _dbContext = null;
-                }
+                _dbContext.Dispose();
+                _dbContext = null;
             }
         }
     }

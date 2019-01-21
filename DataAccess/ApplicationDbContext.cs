@@ -10,6 +10,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using Common.Audit;
 using System.Threading;
 using Common.Security;
+using System.Data.Entity.Migrations;
 
 namespace DataAccess
 {

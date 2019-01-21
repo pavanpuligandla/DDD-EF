@@ -12,7 +12,7 @@ namespace DataAccess.Implementation
         protected DbContext _entities;
         protected readonly IDbSet<T> _dbset;
 
-        public Repository(DbContext context)
+        protected Repository(DbContext context)
         {
             _entities = context;
             _dbset = context.Set<T>();

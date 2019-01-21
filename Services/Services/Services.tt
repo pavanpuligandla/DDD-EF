@@ -18,7 +18,7 @@ namespace Services
     using Services;
 
 <#
-    Assembly assembly = Assembly.LoadFrom(@"D:\ProjectAllocation\Domain\bin\Debug\Domain.dll");
+    Assembly assembly = Assembly.LoadFrom(@"D:\MyProjects\DDD-EF\Domain\bin\Debug\Domain.dll");
     Type[] types = assembly.GetTypes();
 	foreach (Type type in types)      
 	{
