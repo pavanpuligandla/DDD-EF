@@ -10,8 +10,7 @@ namespace ProjectAllocation.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
+            ViewBag.Title = "Project Allocation Test" + System.DateTime.Now;
             return View();
         }
     }
