@@ -1,6 +1,6 @@
 ﻿DEPLOY
 
-migrate -a MyProjects\DDD-EF\DatabaseMigrations\bin\Debug\DatabaseMigrations.dll -db SqlServer2014  -conn "server=EPINHYDW0307\SQL2017;Initial Catalog=ProjectAllocation;User ID = sa;Password = Cuddlefish6$;" -task=migrate 
+migrate -a DatabaseMigrations.dll -db SqlServer2014  -conn "server=EPINHYDW0307\SQL2017;Initial Catalog=ProjectAllocation;User ID = sa;Password = Cuddlefish6$;" -task=migrate 
 
 ROLLBACK ONE
 

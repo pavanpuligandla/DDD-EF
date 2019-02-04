@@ -11,7 +11,7 @@ namespace DataAccess
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
     }
 }

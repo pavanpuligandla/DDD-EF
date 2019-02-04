@@ -16,7 +16,6 @@ namespace DataAccess
 {
     public partial class ApplicationDbContext : DbContext
     {
-        //private readonly IUserContextProvider _userContextProvider;
         public ApplicationDbContext()
             : base("name=DefaultConnection")
         {
@@ -27,7 +26,7 @@ namespace DataAccess
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
-            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();  
         }
 
         public DbSet<AppUser> AppUser { get; set; }
